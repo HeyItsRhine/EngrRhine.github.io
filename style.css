@@ -1,0 +1,750 @@
+body {
+    font-family: 'Anton', 'Josefin Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffffff, #c0c0c0, #808080, #404040, #000000); /* Gradient from white to black */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.logo em {
+    font-style: italic;
+    font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: crimson;
+}
+
+.nav-link.highlight {
+    color: crimson; /* Change this color to whatever highlight color you prefer */
+    font-weight: bold; /* Optional: Make it bold */
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.intro {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 20px;
+    flex-grow: 1; /* Allow intro to grow and fill available space */
+}
+
+.intro-content {
+    text-align: left; /* Align text left */
+    margin-right: 20px; /* Add margin to move the text closer to the image */
+}
+
+.profile-picture {
+    text-align: right; /* Align image right */
+    margin-left: 20px; /* Add margin to move the image closer to the text */
+}
+
+.profile-picture img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 10px; /* Rounded corners */
+    filter: grayscale(50%); /* Apply black and white filter */
+}
+
+.intro h1 {
+    margin: 0;
+    font-size: 56px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    font-family: 'Anton', Arial, sans-serif; /* Use 'Anton' first, then fallback to Arial */
+    text-align: left; /* Align text left */
+}
+
+.intro h3 {
+    margin: 0;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff;
+    font-family: Arial, sans-serif; /* Use Arial font */
+    text-align: left; /* Align text left */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    font-family: Arial, sans-serif; /* Apply Arial to the footer */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #333;
+    }
+    .nav-item {
+        margin: 0;
+    }
+    .nav-link {
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+    }
+    .nav.active {
+        display: flex;
+    }
+
+    .intro {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center items on small screens */
+    }
+
+    .intro-content, .profile-picture {
+        width: 100%; /* Take full width on small screens */
+        max-width: none; /* Remove max-width for full width */
+        text-align: center; /* Center text and image on small screens */
+        margin: 0; /* Remove margin on small screens */
+    }
+}
+
+/* Added rotation animation for icons */
+.rotate {
+    animation: rotate 0.5s ease-in-out;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.photo-gallery img {
+    width: calc(33.33% - 20px); /* Adjusted for 3 columns */
+    height: calc(33.33% - 20px); /* Maintain aspect ratio for 3 rows */
+    margin: 10px;
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* New code for About Me section */
+.page {
+    display: none;
+    text-align: center; /* Center the text */
+}
+
+.page.active {
+    display: block;
+}
+
+.page h2 {
+    font-style: italic; /* Italicize the title */
+    font-family: 'Anton', Arial, sans-serif; /* Apply the Anton font */
+    font-size: 40px; /* Set the font size to 40px */
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+.section-title {
+    font-style: italic; /* Italicize the title */
+    font-family: 'Anton', Arial, sans-serif; /* Apply the Anton font */
+    font-size: 40px; /* Set the font size to 40px */
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+.page p {
+    max-width: 1000px; /* Increase the max-width for a wider text area */
+    margin: 0 auto; 
+    font-family: Arial, sans-serif; 
+    font-size: 20px; /* Adjusted font size */
+    line-height: 1.5; 
+    text-align: justify;
+    text-indent: 2em;
+}
+
+/* Certificate and badge gallery styles */
+.certificate-gallery, .badge-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px; /* Add some space between sections */
+}
+
+.certificate-item, .badge-item {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+}
+
+.certificate-item img, .badge-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.certificate-item p, .badge-item p {
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* Slightly smaller font size for the titles */
+    color: #333;
+    margin: 0;
+}
+
+.certificate-item button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.certificate-item button:hover {
+    background-color: crimson;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certificate-gallery, .badge-gallery {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+}
+
+.view-certificate h3 {
+    font-family: 'Anton', Arial, sans-serif; /* Apply the Anton font */
+    font-size: 30px; /* Adjust font size for the subsections */
+    margin-bottom: 10px;
+}
+
+.view-certificate iframe {
+    border: none; /* Remove border around iframe */
+}
+
+.view-certificate p {
+    font-family: Arial, sans-serif; /* Apply Arial font */
+    font-size: 20px; /* Adjust font size for the subsections */
+    line-height: 1.5;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+/* Existing CSS */
+
+/* New styles for Educational Background and Extra-Curricular Activities section */
+.educational-background {
+    max-width: 800px; /* Adjust max-width to align with the title */
+    margin: 0 auto 20px; /* Center align and add bottom margin */
+    text-align: left; /* Align text to the left */
+}
+
+.educational-background p {
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* Adjust font size */
+    line-height: 1.5;
+    margin: 0 0 10px 0; /* Add bottom margin */
+}
+
+.educational-background p.achievement {
+    font-style: italic; /* Italicize the achievements */
+}
+
+.section-title {
+    text-align: center; /* Center the section title */
+    font-size: 30px;
+    font-family: 'Anton', Arial, sans-serif;
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+.extra-curricular {
+    max-width: 800px; /* Adjust max-width to align with the title */
+    margin: 0 auto; /* Center align */
+    text-align: left; /* Align text to the left */
+}
+
+.extra-curricular p {
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* Adjust font size */
+    line-height: 1.5;
+    margin: 0 0 10px 0; /* Add bottom margin */
+}
+
+.extra-curricular p.achievement {
+    font-style: italic; /* Italicize the achievements */
+}
+
+
+
+.section-title {
+    text-align: center; /* Center the section title */
+    font-size: 30px;
+    font-family: 'Anton', Arial, sans-serif;
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+/* Digital Badges Section */
+#digital-badges {
+    text-align: center; /* Center the section */
+    padding: 40px 0;
+}
+
+#digital-badges .section-title {
+    font-family: 'Anton', Arial, sans-serif; /* Apply the Anton font */
+    font-size: 40px; /* Set the font size */
+    margin-bottom: 20px; /* Add space below the title */
+}
+
+.digital-badge-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    gap: 20px;
+    margin-bottom: 40px; /* Add space between sections */
+}
+
+.digital-badge-item {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+    max-width: 300px; /* Limit the width of each badge item */
+    width: 100%; /* Ensure the item takes full available width */
+}
+
+.digital-badge-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.digital-badge-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.digital-badge-item h3 {
+    font-family: 'Anton', Arial, sans-serif; /* Apply the Anton font */
+    font-size: 30px; /* Adjust font size for the title */
+    margin-bottom: 10px;
+}
+
+.digital-badge-item p {
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* Slightly smaller font size for the sub-title */
+    color: #333;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .digital-badge-gallery {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items on smaller screens */
+    }
+}
+
+#certificate-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#certificate-viewer iframe {
+    width: 80%;
+    height: 80%;
+}
+
+#certificate-viewer button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.certificate-item {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificate-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#skills .sub-titles {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills .sub-titles li {
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+}
+
+/* CSS for Sub-Titles */
+.sub-titles {
+    font-family: 'Anton', sans-serif; /* Use Anton font */
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;
+}
+
+.sub-title {
+    font-weight: bold; /* Make sub-titles bold */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* CSS for Graph Bars */
+.graph {
+    width: 100%;
+    height: 20px; /* Adjust height as needed */
+    background-color: #f0f0f0; /* Light gray background */
+    margin-bottom: 10px;
+}
+
+.bar {
+    height: 100%;
+    background-color: #4CAF50; /* Green color for bars */
+}
+
+/* CSS for Sub-Titles */
+.sub-titles {
+    font-family: 'Anton', sans-serif; /* Use Anton font */
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;
+}
+
+.sub-title {
+    font-weight: bold; /* Make sub-titles bold */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Core Competencies Section */
+#skills {
+    padding: 20px;
+}
+
+#skills p {
+    margin-bottom: 20px;
+}
+
+/* Proficiency Section */
+.proficiency-section {
+    margin-bottom: 20px;
+}
+
+.proficiency-section h3 {
+    font-family: 'Anton', sans-serif; /* Anton font */
+    font-weight: bold;
+    font-size: 40px;
+    color: #333; /* Adjust color as needed */
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px; /* Adjust as needed */
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.gallery-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Make sure the entire image is visible, maintaining its aspect ratio */
+    border-radius: 8px;
+}
+
+.sub-titles {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    font-family: 'Anton', Arial, sans-serif; /* Use Anton font */
+}
+
+.sub-titles li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.workplace-professionalism-container {
+    margin-left: 20px;
+}
+
+.workplace-professionalism-content {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.workplace-professionalism-content h3 {
+    font-size: 30px;
+    font-weight: normal; /* Ensure it is not bold */
+    margin: 0;
+}
+
+.workplace-professionalism-content p {
+    margin: 0;
+}
+
+.workplace-professionalism-content .sub-titles {
+    list-style-type: disc; /* Ensure bullet points are shown */
+    padding-left: 20px; /* Indent list items */
+    margin-top: 10px;
+}
+
+.workplace-professionalism-content .sub-titles li {
+    font-size: 25px;
+    font-weight: normal; /* Ensure it is not bold */
+    margin-bottom: 5px;
+}
+
+/* Contact Me Section */
+#contact {
+    padding: 50px;
+    color: #fff; /* White text */
+    display: none; /* Hide by default */
+}
+
+#contact.active {
+    display: block; /* Show when active */
+}
+
+#contact h2 {
+    font-size: 36px;
+    font-family: 'Anton', Arial, sans-serif;
+    margin-bottom: 20px;
+    color: #000000; /* Crimson title */
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+    color: #000000; /* Crimson label text */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid crimson; /* Crimson border */
+    border-radius: 5px;
+    color: #fff; /* White text in input fields */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: crimson;
+    outline: none;
+}
+
+.submit-btn,
+.cv-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000; /* Crimson background */
+    color: #fff; /* White text */
+    font-family: 'Anton', Arial, sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover,
+.cv-btn:hover {
+    background-color: #900; /* Darker crimson on hover */
+}
+
+/* Style for the Download CV button */
+#download-cv {
+    background-color: #000000; /* Red background */
+    color: #fff; /* White text */
+    font-family: 'Anton', Arial, sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Hover effect for the Download CV button */
+#download-cv:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #contact {
+        padding: 30px;
+    }
+
+    #contact h2 {
+        font-size: 30px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+    }
+
+    .submit-btn,
+    .cv-btn {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
